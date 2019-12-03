@@ -26,9 +26,7 @@
     "reflect-metadata": "0.1.12",
     "rimraf": "2.6.2",
     "rxjs": "6.3.3",
-    "typeorm": "0.2.20"
-  },
-  "devDependencies": {
+    "typeorm": "0.2.20",
     "@types/express": "4.16.0",
     "@types/jest": "23.3.13",
     "@types/node": "10.12.18",
@@ -43,19 +41,5 @@
     "tsconfig-paths": "3.7.0",
     "tslint": "5.12.1",
     "typescript": "3.2.4"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      ".+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
   }
 }
