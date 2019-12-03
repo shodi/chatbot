@@ -1,16 +1,19 @@
+import { IUser } from './../user/user';
+
+export interface ILocation {
+    latitude: number;
+    longitude: number;
+}
+
 export interface IMessage {
     update_id: number,
     message: {
         message_id: number,
-        from: {
-            id: number,
-            is_bot: boolean,
-            first_name: string,
-            language_code: string
-        },
+        from: IUser,
         chat: { id: number, first_name: string, type: string },
         date: string,
-        text: string,
+        text?: string,
+        location?: ILocation;
         entities: Array<any>;
     }
 }

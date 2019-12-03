@@ -1,5 +1,5 @@
 import { Injectable, HttpService } from '@nestjs/common';
-import { Config } from 'src/server/config';
+import { Config } from './../server/config';
 
 @Injectable()
 export class MessageService {

@@ -5,7 +5,6 @@
   "exec": "ts-node -r tsconfig-paths/register src/main.ts",
   "env": {
     "TOKEN_PATH": "./src/server/credentials/bot.token",
-    "DATABASE_USERNAME": "./src/server/credentials/username",
-    "DATABASE_PASSWORD": "./src/server/credentials/password"
+    "DATABASE_URL": "postgres://vpicbzvaqanpif:ad4f583a4a0460bd4ba5cc30a8504e236932d0373bd666ecd9c329e9d2c63a65@ec2-184-73-192-172.compute-1.amazonaws.com:5432/d7bmi24qk17a57"
   }
 }
