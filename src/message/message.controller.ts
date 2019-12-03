@@ -14,9 +14,6 @@ export class MessageController {
     public async getMessage(@Body() req: IMessage): Promise<any> {
         this.logger.log(req);
         const chatId = req.message.chat.id;
-        if (req.message.hasOwnProperty('voice') || req.message.hasOwnProperty('photo')) {
-            await this.service.sendMessage(chatId, 'Ainda não estamos trabalhando com audio e fotos 🌚');
-        }
         await this.service.sendMessage(chatId, req.message.text.toUpperCase());
     }
 
