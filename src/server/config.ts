@@ -5,8 +5,8 @@ export class Config {
     private BOT_TOKEN: string;
 
     constructor() {
-        console.log('************** CONFIG INIT **************');
-        this.BOT_TOKEN = readFileSync(process.env.TOKEN_PATH).toString();
+        this.BOT_TOKEN =
+            readFileSync('./src/server/credentials/bot.token').toString();
     }
 
     public get chatToken(): string {
