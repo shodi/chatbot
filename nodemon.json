@@ -1,0 +1,11 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts"],
+  "exec": "ts-node -r tsconfig-paths/register src/main.ts",
+  "env": {
+    "TOKEN_PATH": "./src/server/credentials/bot.token",
+    "DATABASE_USERNAME": "./src/server/credentials/username",
+    "DATABASE_PASSWORD": "./src/server/credentials/password"
+  }
+}
