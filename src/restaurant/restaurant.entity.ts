@@ -1,7 +1,8 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'tb_restaurantes' })
 export class Restaurant {
+    @PrimaryColumn() public name: string;
     @Column() public address: string;
     @Column() public categories: string;
     @Column() public city: string;
@@ -22,7 +23,6 @@ export class Restaurant {
     @Column({name: 'long'}) public longetude: number;
     @Column() public menus: string;
     @Column() public menuURL: string;
-    @Column() public name: string;
     @Column() public paymentTypes: string;
     @Column() public phones: string;
     @Column() public postalCode: string;
