@@ -24,6 +24,7 @@ export class MessageService {
         const [restaurant, distance] = await this.restaurantService.getNearestRestaurant(latitude, longetude);
         const message = `Que tal visitar o '${restaurant.name}' na provincia ${restaurant.province}`;
         await this.sendMessage(chatId, message);
+        if (restaurant.address) await this.sendMessage(chatId, `busque pelo endereço ${restaurant.address}`);
         let pagelink = 'para mais informações acesse';
         if (restaurant.facebookPageURL || restaurant.twitter) {
             pagelink = pagelink + (
