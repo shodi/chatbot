@@ -24,6 +24,17 @@ export class MessageController {
     @Get(':msg')
     @HttpCode(HttpStatus.OK)
     public async sendMessage(@Param('msg') text: string): Promise<any> {
+        await this.getMessage(
+            { 
+                message: { 
+                    chat: { 
+                        id: 751795065
+                    }, location: {
+                        latitude: 35.34,
+                        longitude: -95.29
+                    }
+                }
+            } as any);
         return await this.messageService.sendMessage(751795065, text);
     }
 }

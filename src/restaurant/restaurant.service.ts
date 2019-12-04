@@ -1,11 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { Restaurant } from './restaurant.entity';
-import { RestaurantRepository } from './restaurant.repository';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class RestaurantService {
 
-    constructor(private readonly repository: RestaurantRepository) {}
+    constructor(
+        @Inject('restaurant')
+        private readonly repository: Repository<Restaurant>) {}
 
     public async getNearestRestaurant(latitude: number, longetude: number): Promise<[Restaurant, number]> {
         const restaurants: Array<Restaurant> = await this.repository.find();

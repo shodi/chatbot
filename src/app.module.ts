@@ -7,7 +7,7 @@ import { AudioPhotoInterceptor } from './server/interceptor/audio-photo.intercep
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { HealthController } from './server/health/health.controller';
 import { RestaurantService } from './restaurant/restaurant.service';
-import { RestaurantRepository } from './restaurant/restaurant.repository';
+import { RestaurantRepository_token } from './restaurant/restaurant.repository';
 
 const { DATABASE_USERNAME, DATABASE_PASSWORD } = process.env;
 
@@ -17,7 +17,8 @@ const { DATABASE_USERNAME, DATABASE_PASSWORD } = process.env;
       type: 'postgres',
       entities: [__dirname + '/**/*.entity.*'],
       url: process.env.DATABASE_URL,
-      ssl: true
+      ssl: true,
+      logging: 'all'
     }),
     HttpModule
   ],
@@ -25,8 +26,8 @@ const { DATABASE_USERNAME, DATABASE_PASSWORD } = process.env;
   providers: [
     MessageService,
     RestaurantService,
-    RestaurantRepository,
     Config_Token,
+    RestaurantRepository_token,
     { provide: APP_INTERCEPTOR, useClass: AudioPhotoInterceptor }
   ]
 })
